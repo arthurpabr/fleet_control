@@ -3,7 +3,6 @@ from django.shortcuts import render
 
 
 def index(request):
-    #return HttpResponse('Olá! Você criou sua primeira requisição.')
     context_return = {
         'course_name' : 'Python e Django na Prática',
         'alunos_list': [

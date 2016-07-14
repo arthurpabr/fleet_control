@@ -1,14 +1,24 @@
 {% extends 'base.html' %}
+{% load resources_extras %}
 {% load vehicle_tags %}
 {% block title %}Home{% endblock %}
 
 {% block content %}
+<h1>Curso {{course_name}}</h1>
+<h3>Alunos</h3>
+<h4>(lista recebida no context da view)</h4>
+<ul>
+	{% for aluno in alunos_list %}
+		<li>{{aluno.name}}</li>
+	{% endfor%}
+</ul>
 <p>&nbsp;</p>
-<p>&nbsp;</p>
+<h3>Carros</h3>
+<h4>(lista criada a partir de tag customizada - templatetags/vehicle_tags)</h4>
 <p>
-    {% get_vehicles 3 as vehicles_list %}
+    {% get_vehicles 5 as vehicles_list %}
     {% for car in vehicles_list %}
-        <li>{{ car }}</li>
+        <li>{{ car | cria_label:'carro: ' }}</li>
     {% endfor %}
 </p>
 {% endblock %}
