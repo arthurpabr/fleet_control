@@ -18,7 +18,7 @@
 <p>
     {% get_vehicles 5 as vehicles_list %}
     {% for car in vehicles_list %}
-        <li>{{ car | cria_label:'carro: ' }}</li>
+        <li>{{ car.name | cria_label:'carro: ' }}</li>
     {% endfor %}
 </p>
 {% endblock %}
