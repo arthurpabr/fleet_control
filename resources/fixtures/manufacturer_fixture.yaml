@@ -1,0 +1,4 @@
+-   model: resources.Manufacturer
+    pk: 1
+    fields:
+        name: Ford

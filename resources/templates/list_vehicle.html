@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2> Lista de Veículos</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for vehicle in vehicle_list %}
+        <tr>
+            <td>{{ vehicle.id }}</td>
+            <td>{{ vehicle.name }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

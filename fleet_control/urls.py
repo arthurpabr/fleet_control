@@ -17,9 +17,11 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 
+admin.site.site_header = 'My admin'
+
 urlpatterns = [
     url(r'^resources/', include('resources.urls')),
-    url(r'^grappelli/', include('grappelli.urls')), # grappelli URLS
     url(r'^admin/', admin.site.urls),
+    #url(r'^grappelli/', include('grappelli.urls')), # grappelli URLS
     #url(r'^$', admin.site.urls),
 ]

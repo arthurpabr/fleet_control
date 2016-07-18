@@ -1,0 +1,10 @@
+-   model: auth.user
+    pk: 1
+    fields:
+        username: joaop
+        password: 123456
+
+-   model: resources.Manager
+    pk: 1
+    fields:
+        name: João Paulo

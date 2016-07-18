@@ -1,0 +1,13 @@
+-   model: resources.Manufacturer
+    pk: 1
+    fields:
+        name: Fiat
+
+-   model: resources.Vehicle
+    pk: 1
+    fields:
+        name: Grand Siena
+        description: Sedan médio popular
+        licence_plate: GGG1414
+        manufacture_year: 2000-01-01
+        manufacturer: 1

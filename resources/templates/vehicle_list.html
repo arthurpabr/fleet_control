@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2> Lista de Veículos</h2>
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Placa</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for vehicle in vehicle_list %}
+        <tr>
+            <td>{{ vehicle.id }}</td>
+            <td>{{ vehicle.name }}</td>
+            <td>{{ vehicle.licence_plate }}</td>
+            <td>
+                <a class="btn btn-info btn-sm" \
+                    href="{% url "vehicle_detail" vehicle.id %}">Detalhar</a>&nbsp;
+                <a class="btn btn-warning btn-sm" \
+                    href="{% url "vehicle_update" vehicle.id %}">Editar</a>&nbsp;
+                <a class="btn btn-danger btn-sm" \
+                    href="{% url "vehicle_delete" vehicle.id %}">Apagar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% if is_paginated %}
+<div class="paginacao">
+    <span class="paginacao-links">
+        {% if page_obj.has_previous %}
+        <a class="btn btn-primary btn-xs" href="?page={{ page_obj.previous_page_number }}">anterior</a>
+        {% endif %}
+        <span class="page-current">
+            P&aacute;gina {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}
+        </span>
+        {% if page_obj.has_next %}
+        <a class="btn btn-primary btn-xs" href="?page={{ page_obj.next_page_number }}">pr&oacute;xima</a>
+        {% endif %}
+    </span>
+</div>
+{% endif %}
+<div>
+    <br />  
+    <a class="btn btn-success btn-sm" \
+        href="{% url "vehicle_add" %}">Adicionar um novo carro</a>
+</div>
+{% endblock %}
