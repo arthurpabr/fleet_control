@@ -17,7 +17,8 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 
-admin.site.site_header = 'My admin'
+admin.site.site_title = 'Sistema de Controle de Frotas'
+admin.site.site_header = 'Controle de Frotas'
 
 urlpatterns = [
     url(r'^resources/', include('resources.urls')),
